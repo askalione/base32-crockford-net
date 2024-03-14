@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Base32Crockford", "src\Base32Crockford\Base32Crockford.csproj", "{DB0CCB3C-B501-4095-BD32-8675AF73504A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base32Crockford.Sample", "samples\Base32Crockford.Sample\Base32Crockford.Sample.csproj", "{2CEFB848-C462-488C-9304-83F190A8EA3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Base32Crockford.Sample", "samples\Base32Crockford.Sample\Base32Crockford.Sample.csproj", "{2CEFB848-C462-488C-9304-83F190A8EA3D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{10004917-710E-4FCE-A56A-2970F5CD7608}"
 EndProject
@@ -18,12 +18,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Solution Items", ".Solutio
 		nuget.config = nuget.config
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7BBE4549-A61E-43E9-8DB6-F84E1EBAC7BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base32Crockford.Tests", "tests\Base32Crockford.Tests\Base32Crockford.Tests.csproj", "{DCEBE0C2-0EB8-448C-97FA-FF88EB048638}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{51D6B417-75F0-4EBC-BE38-EA049FADF04A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51D6B417-75F0-4EBC-BE38-EA049FADF04A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51D6B417-75F0-4EBC-BE38-EA049FADF04A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB0CCB3C-B501-4095-BD32-8675AF73504A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DB0CCB3C-B501-4095-BD32-8675AF73504A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB0CCB3C-B501-4095-BD32-8675AF73504A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -32,6 +40,10 @@ Global
 		{2CEFB848-C462-488C-9304-83F190A8EA3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CEFB848-C462-488C-9304-83F190A8EA3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CEFB848-C462-488C-9304-83F190A8EA3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCEBE0C2-0EB8-448C-97FA-FF88EB048638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCEBE0C2-0EB8-448C-97FA-FF88EB048638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCEBE0C2-0EB8-448C-97FA-FF88EB048638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCEBE0C2-0EB8-448C-97FA-FF88EB048638}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +51,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DB0CCB3C-B501-4095-BD32-8675AF73504A} = {10004917-710E-4FCE-A56A-2970F5CD7608}
 		{2CEFB848-C462-488C-9304-83F190A8EA3D} = {AD3921FD-03E3-4CEE-BAB4-6FA4C19EF028}
+		{DCEBE0C2-0EB8-448C-97FA-FF88EB048638} = {7BBE4549-A61E-43E9-8DB6-F84E1EBAC7BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F618433-EC6E-4E47-9B7C-A4CF2C9AB4EF}

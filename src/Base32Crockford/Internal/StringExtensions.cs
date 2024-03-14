@@ -21,7 +21,7 @@ namespace Base32Crockford.Internal
             ArgumentNullException.ThrowIfNull(translations, nameof(translations));
 
             var sb = new StringBuilder(source.Length);
-            foreach(char sourceChar in source)
+            foreach (char sourceChar in source)
             {
                 sb.Append(translations.ContainsKey(sourceChar) ? translations[sourceChar] : sourceChar);
             }
@@ -38,16 +38,9 @@ namespace Base32Crockford.Internal
             int start = 0;
             int stop = source.Length;
 
-            if (start < stop && step > 0)
+            if (start < stop)
             {
                 for (int i = start; i < stop; i += step)
-                {
-                    yield return i;
-                }
-            }
-            else if (start > stop && step < 0)
-            {
-                for (int i = start; i > stop; i += step)
                 {
                     yield return i;
                 }

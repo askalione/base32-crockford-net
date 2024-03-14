@@ -3,16 +3,24 @@
     <LangVersion>latest</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
-   
+
   <PropertyGroup>
     <Product>$(PackageId)</Product>
-    <Authors>Base32Crockford</Authors>    
-    <PackageIcon>icon.png</PackageIcon>   
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>Copyright 2024 Alexey Drapash</Copyright>
+    <RepositoryUrl>https://github.com/askalione/base32-crockford-net</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <IncludeSymbols>false</IncludeSymbols>
+    <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\assets\logo\logo_128x128.png" Pack="true" Visible="false" PackagePath="icon.png" />
+    <None Include="..\..\LICENSE" Pack="true" Visible="false" PackagePath="" />
+  </ItemGroup>
 
 </Project>

@@ -5,8 +5,11 @@ using Base32Crockford.Internal;
 namespace Base32Crockford
 {
     /// <summary>
-    /// 
+    /// Provides methods to encode and decode numbers with Base32 Crockford algorithm.
     /// </summary>
+    /// <remarks>
+    /// See https://www.crockford.com/base32.html.
+    /// </remarks>
     public sealed class Base32CrockfordEncoding
     {
         /// <summary>
@@ -59,7 +62,7 @@ namespace Base32Crockford
         /// <param name="number">Input number to encode.</param>
         /// <param name="checksum">The flag indicates to append checksum value to result string.</param>
         /// <param name="split">Size of characters group in result string split by hyphen.</param>
-        /// <returns></returns>
+        /// <returns>An encoded symbol string.</returns>
         public string Encode(ulong number, bool checksum = false, byte split = 0)
         {
             char? checkSymbol = null;
@@ -74,20 +77,22 @@ namespace Base32Crockford
             }
 
             string result = string.Empty;
-            while(number > 0)
+            while (number > 0)
             {
                 ulong remainder = number % _symbolsLength;
-                number = (ulong)Math.Floor((double)number / _symbolsLength);
+                number = number / _symbolsLength;
                 result = _encodeSymbols[remainder] + result;
             }
             result = result + checkSymbol;
 
-            if (split > 0)
+            if (split > 0 && split < result.Length)
             {
                 List<string> chunks = new List<string>();
-                foreach(int start in result.Range(split))
+                foreach (int start in result.Range(split))
                 {
-                    chunks.Add(result.Substring(start, split));
+                    int length = result.Length - start;
+                    int chunkLength = length > split ? split : length;
+                    chunks.Add(result.Substring(start, chunkLength));
                 }
                 result = string.Join("-", chunks);
             }
@@ -95,8 +100,17 @@ namespace Base32Crockford
             return result;
         }
 
+        /// <summary>
+        /// Decode an encoded symbol string to number.
+        /// </summary>
+        /// <param name="encodedString">Input encoded string to decode.</param>
+        /// <param name="checksum">The flag indicates to validate trailing checksum symbol.</param>
+        /// <param name="strict">The flag indicates that normalization step requires changes to the input string.</param>
+        /// <returns>A decoded number.</returns>
         public ulong Decode(string encodedString, bool checksum = false, bool strict = false)
         {
+            ArgumentException.ThrowIfNullOrWhiteSpace(encodedString, nameof(encodedString));
+
             encodedString = Normalize(encodedString, strict);
 
             char? checkSymbol = null;
@@ -107,7 +121,7 @@ namespace Base32Crockford
             }
 
             ulong result = 0;
-            foreach(char symbol in encodedString)
+            foreach (char symbol in encodedString)
             {
                 result = result * _symbolsLength + _decodeSymbols[symbol];
             }
@@ -126,10 +140,8 @@ namespace Base32Crockford
             return result;
         }
 
-        public string Normalize(string encodedString, bool strict = false)
+        private string Normalize(string encodedString, bool strict = false)
         {
-            ArgumentException.ThrowIfNullOrWhiteSpace(encodedString, nameof(encodedString));
-
             if (encodedString.All(char.IsAscii) == false)
             {
                 throw new ArgumentException(
