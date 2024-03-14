@@ -2,7 +2,7 @@
 
 # Base32Crockford
 
-![Build Status](https://dev.azure.com/askalione/OpenSource/_apis/build/status/Base32Crockford)
+[![Build Status](https://dev.azure.com/askalione/OpenSource/_apis/build/status/Base32Crockford)](https://dev.azure.com/askalione/OpenSource/_build?definitionId=2)
 [![GitHub license](https://img.shields.io/github/license/askalione/base32-crockford-net)](https://github.com/askalione/base32-crockford-net/blob/master/LICENSE)
 
 This package is .NET number (`UInt64`) encoder/decoder implementation of [Base32 Crockford](https://www.crockford.com/base32.html) inspired by [jbittel's Python package](https://github.com/jbittel/base32-crockford). 
