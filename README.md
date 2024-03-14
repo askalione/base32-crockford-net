@@ -57,4 +57,4 @@ ulong number = encoding.Encode("19S5"); // Result: 1337
 
 ## License
 
-Structr is open source, licensed under the [MIT License](https://github.com/askalione/base32-crockford-net/blob/master/LICENSE).
+Base32Crockford is open source, licensed under the [MIT License](https://github.com/askalione/base32-crockford-net/blob/master/LICENSE).
