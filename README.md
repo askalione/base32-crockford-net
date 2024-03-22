@@ -42,17 +42,17 @@ Install-Package Base32Crockford
 ```cs
 Base32CrockfordEncoding encoding = new Base32CrockfordEncoding();
 
-// Encode
+// Encode.
 string encodedString = encoding.Encode(1337); // Result: "19S"
 // Encode with check symbol on the end of result string.
 string encodedString = encoding.Encode(1337, checksum: true); // Result: "19S5"
 // Encode with check symbol on the end of result string.
 string encodedString = encoding.Encode(133777345, split: 2); // Result: "3ZJ-HY1"
 
-// Decode
+// Decode.
 ulong number = encoding.Encode("19S"); // Result: 1337
-// Decode with check symbol
-ulong number = encoding.Encode("19S5"); // Result: 1337
+// Decode with check symbol.
+ulong number = encoding.Encode("19S5", checksum: true); // Result: 1337
 ```
 
 Singleton lifetime:
