@@ -47,7 +47,7 @@ string encodedString = encoding.Encode(1337); // Result: "19S"
 // Encode with check symbol on the end of result string.
 string encodedString = encoding.Encode(1337, checksum: true); // Result: "19S5"
 // Encode with check symbol on the end of result string.
-string encodedString = encoding.Encode(133777345, split: 3); // Result: "3ZJ-HY1"
+string encodedString = encoding.Encode(133777345, split: 2); // Result: "3ZJ-HY1"
 
 // Decode
 ulong number = encoding.Encode("19S"); // Result: 1337
