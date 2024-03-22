@@ -50,9 +50,9 @@ string encodedString = encoding.Encode(1337, checksum: true); // Result: "19S5"
 string encodedString = encoding.Encode(133777345, split: 2); // Result: "3ZJ-HY1"
 
 // Decode.
-ulong number = encoding.Encode("19S"); // Result: 1337
+ulong number = encoding.Decode("19S"); // Result: 1337
 // Decode with check symbol.
-ulong number = encoding.Encode("19S5", checksum: true); // Result: 1337
+ulong number = encoding.Decode("19S5", checksum: true); // Result: 1337
 ```
 
 Singleton lifetime:
